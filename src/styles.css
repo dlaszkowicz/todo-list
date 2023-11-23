@@ -3,10 +3,12 @@ body {
   padding: 0px;
   margin: 0px;
 }
-
+.container {
+  height: 100%;
+}
 .header {
   background-color: #ffd5cf;
-  height: 5.5rem;
+  height: 10%;
   display: flex;
   align-items: center;
   padding-left: 1.5rem;
@@ -14,7 +16,10 @@ body {
 nav {
   background-color: #f9f5f2;
   width: 16rem;
-  height: 50rem;
+  height: 83%;
+  padding-top: 1.3rem;
+  display: flex;
+  flex-direction: column;
 }
 i {
   vertical-align: 1px;
@@ -23,19 +28,50 @@ i {
 nav button {
   background-color: #f9f5f2;
   border: none;
-  padding-left: 1.6rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
 }
-.time-line button {
-  padding-bottom: 1rem;
+.time-line button,
+.projects button {
+  text-align: start;
+  margin: 0rem 1.4rem;
+  padding: 0.8rem;
 }
-.projects h3 {
-  padding-left: 1rem;
-  margin: 0;
+.time-line {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
 }
 .projects button {
-  padding-top: 1rem;
+  padding: 0.5rem;
 }
 .add-project {
   font-weight: 900;
-  font-size: 1em;
+  font-size: 1.2em;
+}
+nav button:hover {
+  background-color: #d2d0ce;
+}
+.projects h2 {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.footer {
+  height: 5%;
+  background-color: #ffd5cf;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer i {
+  vertical-align: 2.5px;
+}
+a {
+  text-decoration: none;
+  color: #000;
 }
