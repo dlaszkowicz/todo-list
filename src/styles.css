@@ -46,9 +46,6 @@ nav button {
   display: flex;
   flex-direction: column;
 }
-.projects button {
-  padding: 0.5rem;
-}
 .add-project {
   font-weight: 900;
   font-size: 1.2em;
