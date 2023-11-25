@@ -42,21 +42,27 @@
             <button class="add-project">+ Add Project</button>
           </div>
         </nav>
-        <div class="hero"><button class="show-form">+ add</button></div>
+        <div class="hero"><button class="show-form">Add Task</button></div>
       </div>
       <div class="footer">
         <a href="">Copyright © 2021 dlaszkowicz <i class="bi bi-github"></i></a>
       </div>
     </div>
     <dialog class="form-window">
-      <form action="">
-        <input type="text" id="title" placeholder="Title" />
-        <input type="text" id="description" placeholder="Description" />
-        <label for="date">Finish Date:</label>
-        <input type="date" id="date" value="DD/MM/YYYY" />
-        <button type="submit">+ Add Task</button>
-      </form>
-      <button class="hide-form">X close</button>
+      <div class="form-header">
+        <h2>Create a New Task</h2>
+        <button class="hide-form"><i class="bi bi-x"></i></button>
+      </div>
+      <div class="main-form">
+        <div class="side-form"></div>
+        <form action="">
+          <input type="text" id="title" placeholder="Title" />
+          <input type="text" id="description" placeholder="Description" />
+          <label for="date">Finish Date:</label>
+          <input type="date" id="date" value="DD/MM/YYYY" />
+          <button type="submit">+ Add Task</button>
+        </form>
+      </div>
     </dialog>
     <script src="./bundle.js"></script>
   </body>

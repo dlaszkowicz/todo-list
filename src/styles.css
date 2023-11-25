@@ -82,8 +82,66 @@ a {
 }
 .hero {
   flex: 1;
+  display: grid;
 }
 .show-form {
   align-self: flex-end;
-  justify-self: flex-end;
+  justify-self: end;
+  padding: 10px 40px;
+  margin: 20px;
+  font-size: 1.3em;
+  background-color: #f9f5f2;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 15px;
+  font-weight: 700;
+}
+.show-form:hover {
+  background-color: #d2d0ce;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  height: 30rem;
+  margin: 0.6rem;
+}
+.close-form {
+  display: flex;
+  align-self: flex-start;
+}
+#title {
+  margin-top: 1.3rem;
+}
+dialog {
+  display: flex;
+  flex-direction: column;
+}
+.side-form {
+  width: 12rem;
+  height: 32rem;
+  background-color: #f9f5f2;
+  padding: 0px;
+}
+.main-form {
+  display: flex;
+}
+.form-window {
+  padding: 0px;
+}
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: #ffd5cf;
+}
+.form-header button {
+  background-color: #ffd5cf;
+  border: none;
+  font-size: 2em;
+}
+input {
+  font-size: 1.3rem;
+  border: none;
+  padding: 0.2rem;
 }
