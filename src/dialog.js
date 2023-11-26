@@ -1,12 +1,19 @@
 function dialogFun() {
   const dialog = document.querySelector(".form-window");
   const form = document.querySelector(".task-form");
+  const title = document.querySelector("#title");
+  const description = document.querySelector("#description");
+  const date = document.querySelector("#date");
   document.querySelector(".show-form").onclick = function () {
     dialog.showModal();
     document.body.classList.add("dialog-open"); // Add class to body when dialog is open
   };
   document.querySelector(".hide-form").onclick = function () {
+    title.textContent = "";
+    description.textContent = "";
+    date.textContent = "";
     dialog.close();
+
     // Remove class from body when dialog is closed
   };
   form.addEventListener("submit", function (event) {

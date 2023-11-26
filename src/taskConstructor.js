@@ -44,7 +44,7 @@ function taskCreator() {
     options.appendChild(details);
 
     const date = document.createElement("p");
-    if ((newTask.date = "")) {
+    if (newTask.date.length === 0) {
       date.textContent = "No Date";
     } else {
       date.textContent = newTask.date;
@@ -59,7 +59,9 @@ function taskCreator() {
     const remove = document.createElement("button");
     remove.innerHTML = `<i class="bi bi-trash"></i>`;
     options.appendChild(remove);
-
+    remove.addEventListener("click", function () {
+      task.remove();
+    });
     taskContainer.appendChild(task);
   }
   submitBtn.addEventListener("click", function () {

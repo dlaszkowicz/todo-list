@@ -1,7 +1,15 @@
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
 }
 
 .container {
@@ -55,7 +63,8 @@ nav button {
   flex-direction: column;
 }
 
-.add-project {
+.add-project,
+.show-form {
   font-weight: 900;
   font-size: 1.2em;
 }
@@ -99,10 +108,9 @@ a {
 
 .hero {
   flex: 1;
-  display: grid;
+  width: 100%;
 }
 
-.show-form,
 #submit-btn {
   align-self: flex-end;
   justify-self: end;
@@ -140,16 +148,18 @@ form {
 
 .side-form {
   width: 12rem;
-  height: 32rem;
+  height: 42rem;
   background-color: #f9f5f2;
   padding: 0px;
 }
 
 .main-form {
+  max-width: 100%;
   display: flex;
 }
 
 .form-window {
+  max-width: 90%;
   padding: 0px;
 }
 
@@ -180,7 +190,9 @@ form {
 
 #description {
   height: 30rem;
+
   vertical-align: top;
+  text-wrap: wrap;
   margin-bottom: 20px;
 }
 
@@ -212,12 +224,10 @@ input:last-child {
 
 .task {
   display: flex;
-  width: 80%;
+  width: 90%;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 50rem;
   height: 2.5rem;
-  align-self: flex-start;
   margin: 1.5rem 4rem 1.5rem 2.3rem;
   padding: 0.3rem 1rem;
   align-items: center;
@@ -254,9 +264,15 @@ input[type="checkbox"] {
 .options-and-date {
   display: flex;
   flex-direction: row;
+  max-height: 100%;
+  align-items: center;
 }
 
 .title-div {
   display: flex;
   flex-direction: row;
+}
+.date {
+  width: 8rem;
+  text-align: center;
 }
