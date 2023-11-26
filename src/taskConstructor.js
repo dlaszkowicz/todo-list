@@ -1,6 +1,7 @@
 function taskCreator() {
   const submitBtn = document.querySelector("#submit-btn");
   const newTaskForm = document.querySelector(".task-form");
+  const taskContainer = document.querySelector(".task-container");
   const task = function taskFun(title, description, date) {
     this.title = title;
     this.description = description;
@@ -16,12 +17,14 @@ function taskCreator() {
     const task = document.createElement("div");
     task.setAttribute("class", "task");
 
-    const checkmark = document.createElement("button");
+    const checkmark = document.createElement("input");
+    checkmark.type = "checkbox";
+    checkmark.classList.add("checkmark");
     task.appendChild(checkmark);
-    hero.appendChild(task);
 
     const title = document.createElement("p");
     title.textContent = newTask.title;
+    title.classList.add("title");
     task.appendChild(title);
 
     const description = document.createElement("p");
@@ -29,10 +32,10 @@ function taskCreator() {
     task.appendChild(description);
 
     const date = document.createElement("p");
-
+    date.textContent = newTask.date;
     task.appendChild(date);
 
-    hero.appendChild(newTask);
+    taskContainer.appendChild(task);
   }
   submitBtn.addEventListener("click", function () {
     addTask();

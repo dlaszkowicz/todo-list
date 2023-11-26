@@ -175,3 +175,25 @@ input:last-child {
 .dialog-open {
   overflow: hidden;
 }
+.task {
+  display: flex;
+  width: 50rem;
+  height: 2.5rem;
+  align-self: flex-start;
+  border: 1px solid black;
+  margin: 1.5rem 4rem 1.5rem 2.3rem; /* t r b l */
+  padding: 0.3rem 1rem;
+  align-items: center;
+  background-color: #f9f5f2;
+  border: none;
+  border-radius: 18px;
+}
+.hero {
+  display: flex;
+}
+input[type="checkbox"] {
+  transform: scale(2);
+}
+.title {
+  padding-left: 1rem;
+}

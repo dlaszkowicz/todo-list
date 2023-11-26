@@ -7,12 +7,11 @@ function dialogFun() {
   };
   document.querySelector(".hide-form").onclick = function () {
     dialog.close();
-    document.body.classList.remove("dialog-open"); // Remove class from body when dialog is closed
+    // Remove class from body when dialog is closed
   };
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-    dialog.close();
-    document.body.classList.remove("dialog-open"); // Make sure to remove the class after submission
+    dialog.close(); // Make sure to remove the class after submission
   });
 }
 
