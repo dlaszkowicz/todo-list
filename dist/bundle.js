@@ -16,7 +16,7 @@
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction dialogFun() {\n  const dialog = document.querySelector(\".form-window\");\n  document.querySelector(\".show-form\").onclick = function () {\n    dialog.showModal();\n  };\n  document.querySelector(\".hide-form\").onclick = function () {\n    dialog.close();\n  };\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dialogFun);\n\n\n//# sourceURL=webpack://todo-list/./src/dialog.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction dialogFun() {\n  const dialog = document.querySelector(\".form-window\");\n  const form = document.querySelector(\".task-form\");\n  document.querySelector(\".show-form\").onclick = function () {\n    dialog.showModal();\n    document.body.classList.add(\"dialog-open\"); // Add class to body when dialog is open\n  };\n  document.querySelector(\".hide-form\").onclick = function () {\n    dialog.close();\n    document.body.classList.remove(\"dialog-open\"); // Remove class from body when dialog is closed\n  };\n  form.addEventListener(\"submit\", function (event) {\n    event.preventDefault();\n    dialog.close();\n    document.body.classList.remove(\"dialog-open\"); // Make sure to remove the class after submission\n  });\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dialogFun);\n\n\n//# sourceURL=webpack://todo-list/./src/dialog.js?");
 
 /***/ }),
 
@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dialog */ \"./src/dialog.js\");\n\n\n(0,_dialog__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dialog */ \"./src/dialog.js\");\n/* harmony import */ var _taskConstructor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskConstructor */ \"./src/taskConstructor.js\");\n\n\n(0,_dialog__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_taskConstructor__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/taskConstructor.js":
+/*!********************************!*\
+  !*** ./src/taskConstructor.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction taskCreator() {\n  const task = function taskFun(title, description, date) {\n    const newTaskForm = document.querySelector(\".task-form\");\n    this.title = title;\n    this.description = description;\n    this.date = date;\n  };\n  const newTask = new task();\n  function addTask() {\n    const hero = document.querySelector(\".hero\");\n    newTask.title = newTaskForm.title.value;\n    newTask.description = newTaskForm.description.value;\n    newTask.date = newTaskForm.description.value;\n\n    const task = document.createElement(\"div\");\n    task.setAttribute(\"class\", \"task\");\n\n    const checkmark = document.createElement(\"button\");\n    hero.appendChild(task);\n\n    const title = document.createElement(\"p\");\n    title.textContent = newTask.title;\n    task.appendChild(title);\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (taskCreator);\n\n\n//# sourceURL=webpack://todo-list/./src/taskConstructor.js?");
 
 /***/ })
 

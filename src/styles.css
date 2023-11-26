@@ -75,6 +75,7 @@ a {
 .form-window::backdrop {
   backdrop-filter: blur(2px);
 }
+
 .main {
   display: flex;
   width: 100%;
@@ -114,10 +115,6 @@ form {
 }
 #title {
   margin-top: 1.3rem;
-}
-dialog {
-  display: flex;
-  flex-direction: column;
 }
 .side-form {
   width: 12rem;
@@ -174,4 +171,7 @@ input:last-child {
 }
 #submit-btn {
   margin-left: 20rem;
+}
+.dialog-open {
+  overflow: hidden;
 }
