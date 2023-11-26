@@ -17,23 +17,48 @@ function taskCreator() {
     const task = document.createElement("div");
     task.setAttribute("class", "task");
 
+    const titleDiv = document.createElement("div");
+    titleDiv.classList.add("title-div");
+    task.appendChild(titleDiv);
+
     const checkmark = document.createElement("input");
     checkmark.type = "checkbox";
     checkmark.classList.add("checkmark");
-    task.appendChild(checkmark);
+    titleDiv.appendChild(checkmark);
 
     const title = document.createElement("p");
     title.textContent = newTask.title;
     title.classList.add("title");
-    task.appendChild(title);
+    titleDiv.appendChild(title);
 
     const description = document.createElement("p");
     description.textContent = newTask.description;
-    task.appendChild(description);
+
+    const options = document.createElement("div");
+    options.classList.add("options-and-date");
+    task.appendChild(options);
+
+    const details = document.createElement("button");
+    details.textContent = "Details";
+    details.classList.add("details");
+    options.appendChild(details);
 
     const date = document.createElement("p");
-    date.textContent = newTask.date;
-    task.appendChild(date);
+    if ((newTask.date = "")) {
+      date.textContent = "No Date";
+    } else {
+      date.textContent = newTask.date;
+    }
+    date.classList.add("date");
+    options.appendChild(date);
+
+    const edit = document.createElement("button");
+    edit.innerHTML = `<i class="bi bi-pencil-square"></i>`;
+    options.appendChild(edit);
+
+    const remove = document.createElement("button");
+    remove.innerHTML = `<i class="bi bi-trash"></i>`;
+    options.appendChild(remove);
 
     taskContainer.appendChild(task);
   }
