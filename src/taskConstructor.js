@@ -1,11 +1,14 @@
+import projectMaker from "./nav";
 function taskCreator() {
+  projectMaker();
   const submitBtn = document.querySelector("#submit-btn");
   const newTaskForm = document.querySelector(".task-form");
   const taskContainer = document.querySelector(".task-container");
-  const task = function taskFun(title, description, date) {
+  const task = function taskFun(title, description, date, project) {
     this.title = title;
     this.description = description;
     this.date = date;
+    this.project = project;
   };
   const newTask = new task();
   function addTask() {
@@ -13,6 +16,7 @@ function taskCreator() {
     newTask.title = newTaskForm.title.value;
     newTask.description = newTaskForm.description.value;
     newTask.date = newTaskForm.date.value;
+    newTask.project = projectSelected;
 
     const task = document.createElement("div");
     task.setAttribute("class", "task");
@@ -62,7 +66,9 @@ function taskCreator() {
     remove.addEventListener("click", function () {
       task.remove();
     });
-    taskContainer.appendChild(task);
+    if (title.textContent != "") {
+      taskContainer.appendChild(task);
+    }
   }
   submitBtn.addEventListener("click", function () {
     addTask();

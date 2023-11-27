@@ -27,17 +27,9 @@
       </div>
       <div class="main">
         <nav>
-          <div class="time-line">
-            <button class="home"><i class="bi bi-house"></i> Home</button
-            ><button class="today">
-              <i class="bi bi-calendar-check"></i> Today
-            </button>
-            <button class="this-week">
-              <i class="bi bi-calendar2"></i> This Week
-            </button>
-          </div>
           <div class="projects">
             <h2>Projects</h2>
+            <button class="home"><i class="bi bi-house"></i> All Tasks</button>
             <button><i class="bi bi-card-checklist"></i> Gym</button>
             <button class="show-form">+ Add Task</button>
             <button class="add-project">+ Add Project</button>
@@ -48,7 +40,9 @@
         </div>
       </div>
       <div class="footer">
-        <a href="">Copyright © 2021 dlaszkowicz <i class="bi bi-github"></i></a>
+        <a href="https://github.com/dlaszkowicz" target="_blank"
+          >Copyright © 2023 dlaszkowicz <i class="bi bi-github"></i
+        ></a>
       </div>
     </div>
     <dialog class="form-window">
@@ -57,7 +51,17 @@
         <button class="hide-form"><i class="bi bi-x"></i></button>
       </div>
       <div class="main-form">
-        <div class="side-form"></div>
+        <div class="side-form">
+          <h3>Project:</h3>
+          <div class="project-options">
+            <button id="project-btn">
+              <i class="bi bi-card-checklist"></i>None
+            </button>
+            <button id="project-btn">
+              <i class="bi bi-card-checklist"></i>Gym
+            </button>
+          </div>
+        </div>
         <form class="task-form">
           <input type="text" id="title" placeholder="Title:" required />
           <input type="text" id="description" placeholder="Description:" />

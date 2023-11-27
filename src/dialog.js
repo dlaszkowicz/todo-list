@@ -9,15 +9,14 @@ function dialogFun() {
     document.body.classList.add("dialog-open"); // Add class to body when dialog is open
   };
   document.querySelector(".hide-form").onclick = function () {
-    title.textContent = "";
-    description.textContent = "";
-    date.textContent = "";
+    form.reset();
     dialog.close();
 
     // Remove class from body when dialog is closed
   };
   form.addEventListener("submit", function (event) {
     event.preventDefault();
+    form.reset();
     dialog.close(); // Make sure to remove the class after submission
   });
 }
