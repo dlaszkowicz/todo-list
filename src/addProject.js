@@ -1,15 +1,15 @@
 function addProject() {
   const addProjectBtn = document.querySelector(".add-project");
-  const addProjectForm = document.querySelector(".project-form");
-  const projectDialog = document.querySelector(".project-window");
-  const cancelProject = document.querySelector(".cancel-project");
+  const projects = document.querySelector(".projects-projects");
   addProjectBtn.addEventListener("click", function () {
-    projectDialog.show();
-    document.body.classList.add("dialog-open");
-  });
-  cancelProject.addEventListener("click", function () {
-    projectDialog.reset();
-    projectDialog.close();
+    let projectName = prompt("Project Name:");
+    if (projectName != "" && projectName != null) {
+      const newProject = document.createElement("button");
+      newProject.innerHTML =
+        `<i class="bi bi-card-checklist"></i>` + projectName;
+      newProject.classList.add("new-project");
+      projects.appendChild(newProject);
+    }
   });
 }
 

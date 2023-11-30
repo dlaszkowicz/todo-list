@@ -5,18 +5,9 @@ body {
   height: 100vh;
 }
 
-@media only screen and (max-width: 700px) {
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-  .side-form button {
-    border-radius: 0px;
-  }
-}
-
 .container {
   height: 100%;
+  width: 100%;
 }
 
 .header {
@@ -35,7 +26,9 @@ nav {
   display: flex;
   flex-direction: column;
 }
-
+.phone-menu {
+  display: none;
+}
 i {
   vertical-align: 1px;
   padding-right: 5px;
@@ -304,35 +297,35 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
 }
-.project-window {
-  margin: 0px;
-  padding: 0px;
-  align-self: flex-end;
-  background-color: #f9f5f2;
-  margin-left: 1.4rem;
-  margin-top: 15.5rem;
-  border: none;
-}
-.project-window form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "input input"
-    "add remove";
-  padding-left: 0;
-  padding: 1rem;
-}
-.dialog-buttons button {
+.projects-projects {
   display: flex;
-  margin-top: 0.3rem;
-  justify-content: center;
-  width: 100%;
-  margin-top: 0.4rem;
+  flex-direction: column;
 }
-.project-window input {
-  border-radius: 15px;
-  font-size: 1em;
-  background-color: #f9f5f2;
-  grid-area: input;
+
+@media only screen and (max-width: 700px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  .side-form button {
+    border-radius: 0px;
+  }
+  nav {
+    display: none;
+  }
+  .task-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .task {
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .task i {
+    display: none;
+  }
 }
