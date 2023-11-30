@@ -345,3 +345,7 @@ input[type="checkbox"] {
     display: none;
   }
 }
+.details-window {
+  width: 20rem;
+  height: 15rem;
+}

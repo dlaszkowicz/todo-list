@@ -46,7 +46,7 @@ function taskCreator() {
     details.classList.add("details");
     options.appendChild(details);
     details.addEventListener("click", function () {
-      detailsFun();
+      detailsFun(newTask);
     });
     const date = document.createElement("p");
     if (newTask.date.length === 0) {
