@@ -328,4 +328,20 @@ input[type="checkbox"] {
   .task i {
     display: none;
   }
+  .phone-menu {
+    display: block;
+    background-color: #ffd5cf;
+    border: none;
+  }
+
+  .phone-menu i {
+    font-size: 2.5rem;
+    padding-right: 1rem;
+  }
+  .header {
+    justify-content: space-between;
+  }
+  .date {
+    display: none;
+  }
 }

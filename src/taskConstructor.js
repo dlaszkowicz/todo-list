@@ -1,4 +1,5 @@
 import projectMaker from "./nav";
+import detailsFun from "./details";
 function taskCreator() {
   projectMaker();
   const submitBtn = document.querySelector("#submit-btn");
@@ -12,7 +13,6 @@ function taskCreator() {
   };
   const newTask = new task();
   function addTask() {
-    const hero = document.querySelector(".hero");
     newTask.title = newTaskForm.title.value;
     newTask.description = newTaskForm.description.value;
     newTask.date = newTaskForm.date.value;
@@ -45,7 +45,9 @@ function taskCreator() {
     details.textContent = "Details";
     details.classList.add("details");
     options.appendChild(details);
-
+    details.addEventListener("click", function () {
+      detailsFun();
+    });
     const date = document.createElement("p");
     if (newTask.date.length === 0) {
       date.textContent = "No Date";
