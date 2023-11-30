@@ -1,6 +1,6 @@
 function projectMaker() {
+  let projectSelected;
   let lastClickedBtn = null;
-  let projectSelected = "";
   const projectBtns = document.querySelectorAll("#project-btn");
 
   projectBtns.forEach((btn) => {
@@ -11,9 +11,9 @@ function projectMaker() {
       btn.style.backgroundColor = "#d2d0ce";
       projectSelected = btn.textContent;
       lastClickedBtn = btn;
-      console.log(projectSelected);
     });
   });
+  return projectSelected;
 }
 
 export default projectMaker;

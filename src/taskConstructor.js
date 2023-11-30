@@ -16,8 +16,7 @@ function taskCreator() {
     newTask.title = newTaskForm.title.value;
     newTask.description = newTaskForm.description.value;
     newTask.date = newTaskForm.date.value;
-    newTask.project = projectSelected;
-
+    newTask.project = projectMaker();
     const task = document.createElement("div");
     task.setAttribute("class", "task");
 
@@ -69,6 +68,7 @@ function taskCreator() {
     if (title.textContent != "") {
       taskContainer.appendChild(task);
     }
+    console.log(task.projectSelected);
   }
   submitBtn.addEventListener("click", function () {
     addTask();
