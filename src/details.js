@@ -11,6 +11,13 @@ function detailsFun(task) {
   const headerText = document.createElement("h2");
   headerText.textContent = "Details";
   header.appendChild(headerText);
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = `<i class="bi bi-x"></i>`;
+  closeBtn.addEventListener("click", function () {
+    detailsWindow.close();
+    detailsWindow.remove();
+  });
+  header.appendChild(closeBtn);
   detailsWindow.appendChild(header);
 
   const taskTitle = document.createElement("p");

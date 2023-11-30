@@ -45,9 +45,11 @@ function taskCreator() {
     details.textContent = "Details";
     details.classList.add("details");
     options.appendChild(details);
+
     details.addEventListener("click", function () {
       detailsFun(newTask);
     });
+
     const date = document.createElement("p");
     if (newTask.date.length === 0) {
       date.textContent = "No Date";
@@ -56,10 +58,6 @@ function taskCreator() {
     }
     date.classList.add("date");
     options.appendChild(date);
-
-    const edit = document.createElement("button");
-    edit.innerHTML = `<i class="bi bi-pencil-square"></i>`;
-    options.appendChild(edit);
 
     const remove = document.createElement("button");
     remove.innerHTML = `<i class="bi bi-trash"></i>`;

@@ -346,6 +346,23 @@ input[type="checkbox"] {
   }
 }
 .details-window {
+  padding: 0;
   width: 20rem;
   height: 15rem;
+}
+.details-window .header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0rem;
+  padding: 1rem;
+}
+.details-window p {
+  margin-left: 1rem;
+}
+.details-window button {
+  border: none;
+  background-color: #ffd5cf;
+}
+.details-window i {
+  font-size: 1.5rem;
 }
