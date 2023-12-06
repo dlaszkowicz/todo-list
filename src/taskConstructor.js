@@ -1,33 +1,33 @@
 import projectMaker from "./nav";
 import detailsFun from "./details";
+
 function taskCreator() {
   projectMaker();
   const submitBtn = document.querySelector("#submit-btn");
   const newTaskForm = document.querySelector(".task-form");
   const taskContainer = document.querySelector(".task-container");
-  const task = function taskFun(title, description, date, project) {
+
+  function task(title, description, date, project) {
     this.title = title;
     this.description = description;
     this.date = date;
     this.project = project;
-  };
-  const newTask = new task(
-    newTaskForm.title.value,
-    newTaskForm.description.value,
-    newTaskForm.date.value,
-    projectMaker()
-  );
+  }
+
   function addTask() {
-    newTask.title = newTaskForm.title.value;
-    newTask.description = newTaskForm.description.value;
-    newTask.date = newTaskForm.date.value;
-    newTask.project = projectMaker();
-    const task = document.createElement("div");
-    task.setAttribute("class", "task");
+    const newTask = new task(
+      newTaskForm.title.value,
+      newTaskForm.description.value,
+      newTaskForm.date.value,
+      projectMaker()
+    );
+
+    const taskElement = document.createElement("div");
+    taskElement.setAttribute("class", "task");
 
     const titleDiv = document.createElement("div");
     titleDiv.classList.add("title-div");
-    task.appendChild(titleDiv);
+    taskElement.appendChild(titleDiv);
 
     const checkmark = document.createElement("input");
     checkmark.type = "checkbox";
@@ -39,12 +39,12 @@ function taskCreator() {
     title.classList.add("title");
     titleDiv.appendChild(title);
 
-    const description = document.createElement("p");
-    description.textContent = newTask.description;
+    const descriptionElement = document.createElement("p");
+    descriptionElement.textContent = newTask.description;
 
     const options = document.createElement("div");
     options.classList.add("options-and-date");
-    task.appendChild(options);
+    taskElement.appendChild(options);
 
     const details = document.createElement("button");
     details.textContent = "Details";
@@ -53,28 +53,29 @@ function taskCreator() {
     details.addEventListener("click", function () {
       detailsFun(newTask);
     });
-    const date = document.createElement("p");
-    if (newTask.date.length === 0) {
-      date.textContent = "No Date";
-    } else {
-      date.textContent = newTask.date;
-    }
-    date.classList.add("date");
-    options.appendChild(date);
+
+    const dateElement = document.createElement("p");
+    dateElement.textContent =
+      newTask.date.length === 0 ? "No Date" : newTask.date;
+    dateElement.classList.add("date");
+    options.appendChild(dateElement);
 
     const remove = document.createElement("button");
     remove.innerHTML = `<i class="bi bi-trash"></i>`;
     options.appendChild(remove);
     remove.addEventListener("click", function () {
-      task.remove();
+      taskElement.remove();
     });
-    if (title.textContent != "") {
-      taskContainer.appendChild(task);
+
+    if (title.textContent !== "") {
+      taskContainer.appendChild(taskElement);
     }
-    console.log(task.projectSelected);
+    console.log(newTask.projectSelected);
   }
+
   submitBtn.addEventListener("click", function () {
     addTask();
   });
 }
+
 export default taskCreator;
