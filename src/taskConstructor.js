@@ -11,7 +11,12 @@ function taskCreator() {
     this.date = date;
     this.project = project;
   };
-  const newTask = new task();
+  const newTask = new task(
+    newTaskForm.title.value,
+    newTaskForm.description.value,
+    newTaskForm.date.value,
+    projectMaker()
+  );
   function addTask() {
     newTask.title = newTaskForm.title.value;
     newTask.description = newTaskForm.description.value;
@@ -45,11 +50,9 @@ function taskCreator() {
     details.textContent = "Details";
     details.classList.add("details");
     options.appendChild(details);
-
     details.addEventListener("click", function () {
       detailsFun(newTask);
     });
-
     const date = document.createElement("p");
     if (newTask.date.length === 0) {
       date.textContent = "No Date";
