@@ -10,7 +10,6 @@ function addProject() {
         `<i class="bi bi-card-checklist"></i>` + projectName;
       newProject.classList.add("new-project");
       projectOptions.appendChild(newProject);
-      projects.appendChild(newProject);
       newProject.setAttribute("id", "project-btn");
     }
   });
