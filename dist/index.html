@@ -25,9 +25,10 @@
       <div class="header">
         <h1><i class="bi bi-check-all"></i> To Do</h1>
         <h1>
-          <button class="phone-menu"><i class="bi bi-list"></i></button>
+          <button class="phone-menu-btn"><i class="bi bi-list"></i></button>
         </h1>
       </div>
+
       <div class="main">
         <nav>
           <div class="projects">
@@ -38,7 +39,7 @@
               </button>
             </div>
             <button class="show-form">+ Add Task</button>
-            <button class="add-project">+ Add Project</button>
+
             <dialog class="project-window">
               <form class="project-form">
                 <input
@@ -68,14 +69,7 @@
         <button class="hide-form"><i class="bi bi-x"></i></button>
       </div>
       <div class="main-form">
-        <div class="side-form">
-          <h3>Project:</h3>
-          <div class="project-options">
-            <button id="project-btn">
-              <i class="bi bi-card-checklist"></i>None
-            </button>
-          </div>
-        </div>
+        <div class="side-form"></div>
         <form class="task-form">
           <input type="text" id="title" placeholder="Title:" required />
           <input type="text" id="description" placeholder="Description:" />

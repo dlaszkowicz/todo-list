@@ -13,7 +13,7 @@ function taskCreator() {
     this.date = date;
     this.project = project;
   }
-
+  let taskArray = [];
   function addTask() {
     const newTask = new task(
       newTaskForm.title.value,
@@ -69,6 +69,8 @@ function taskCreator() {
 
     if (title.textContent !== "") {
       taskContainer.appendChild(taskElement);
+      taskArray.push(newTask);
+      console.log(taskArray);
     }
     console.log(newTask.projectSelected);
   }
